@@ -96,9 +96,10 @@ function filterTasks() {
 }
 
 function deleteItem(event) {
+
   const { target } = event
-  const taskItem = document.querySelector('.task-item')
-  taskItem.classList.add('delete')
+  const test = document.querySelector(`div[data-task-id="${target.dataset.deleteTaskId}"]`)
+  test.classList.add('delete')
   setTimeout(() => {
     tasks = tasks.filter((element) => element.id != target.dataset.deleteTaskId)
     updateLocalStorage()
